@@ -1,0 +1,22 @@
+<head>
+
+      <title>Register Page</title>
+
+</head>
+
+<body>
+<h1>Colloqouy</h1>
+<p>Network for Intelligent and Fair Discussion</p>
+<br>
+<h1>Register</h1>
+ <%= form_for(@accounts) do |f| %>
+        <p><%= f.label :name %> <%= f.text_field :name%></p>
+        <p><%= f.label :email %> <%= f.text_field :email%></p>
+        <p><%= f.label :age %> <%= f.text_field :age%></p>
+        <p><%= f.label :department %> <%= f.text_field :department%></p>
+        <p><%= f.label :college %> <%= f.text_field :college%></p>
+        <p><%= f.label :password %> <%= f.text_field :password%></p>
+        <p><%= f.label :repassword %> <%= f.text_field :repassword%></p>
+        <%= f.submit%>
+        <% end %>
+</body>

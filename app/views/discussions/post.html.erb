@@ -1,0 +1,20 @@
+<h1>Colloqouy</h1>
+<p>Network for Intelligent and Fair Discussion</p>
+
+<table>
+  <thead>
+    <tr>
+          <th>Topic Name</th>
+          <th>Topic Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @discussions.each do |discussion| %>
+      <tr>
+        <td><%= discussions.topic_name %></td>
+        <td><%= discussions.topic_description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
