@@ -10,29 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312055433) do
+ActiveRecord::Schema.define(version: 20170316175229) do
 
-  create_table "accounts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.integer  "age"
-    t.string   "department"
-    t.string   "college"
-    t.string   "password"
-    t.string   "repassword"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "discussions", force: :cascade do |t|
-    t.string   "topic_name"
-    t.string   "topic_description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  create_table "forums", force: :cascade do |t|
-    t.integer  "topic_id"
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
