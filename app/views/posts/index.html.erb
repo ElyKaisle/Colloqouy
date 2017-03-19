@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 
       <%= link_to post.title, post %><br>
-      Submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.email if post.user %>
+      Submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.name %>
 
       <br>
       <%= link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm" do %>
