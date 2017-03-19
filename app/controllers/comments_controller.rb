@@ -46,4 +46,16 @@ class CommentsController < ApplicationController
   	  @comment.downvote_by current_user
   	  redirect_to :back
  	end	
+
+	def unupvote
+	  @post = Comment.find(params[:id])
+	  @post.unupvote_by current_user
+	  redirect_to :back
+	end
+
+	def undownvote
+	  @post = Comment.find(params[:id])
+	  @post.undownvote_by current_user
+	  redirect_to :back
+	end
 end

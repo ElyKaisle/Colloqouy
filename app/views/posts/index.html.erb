@@ -1,5 +1,4 @@
 <% @posts.each do |post| %>
-
       <%= link_to post.title, post %><br>
       Submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.name %>
 
@@ -14,3 +13,4 @@
         <br>
       <% end %>
 <% end %>
+

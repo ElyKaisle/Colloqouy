@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     member do
       put "like" => 'comments#upvote'
       put "dislike" => 'comments#downvote'
+      put "unlike" => 'comments#upunvote'
+      put "undislike" => 'comments#updownvote'
     end
   end
 
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
       	member do
   		put "like" => 'posts#upvote'
   		put "dislike" => 'posts#downvote'
+      put "unlike" => 'posts#upunvote'
+      put "undislike" => 'posts#updownvote'
   	end
       resources :comments
   end 
