@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  #post '/users/profile' => 'devise#show'
   resources :posts do
       	member do
   		put "like" => 'posts#upvote'

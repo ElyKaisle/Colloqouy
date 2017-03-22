@@ -89,7 +89,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where(title: params[:search_string])
+    @posts = Post.where(title: params[:search_string]).where(title: params[:search_string])
     render 'index'
   end
 
