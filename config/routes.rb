@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       put "unlike" => 'posts#upunvote'
       put "undislike" => 'posts#updownvote'
   	end
+      post '/posts' => 'posts#find'
       resources :comments
   end 
 

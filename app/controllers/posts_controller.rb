@@ -88,6 +88,12 @@ class PostsController < ApplicationController
     redirect_to :back
   end
 
+  def find
+    @search = params[:search_string]
+    @post = Post.where(:title, @search)
+    render 'index'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
