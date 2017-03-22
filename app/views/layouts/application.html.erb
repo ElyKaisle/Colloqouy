@@ -13,7 +13,7 @@
       <p>Network for Intelligent and Fair Discussion</p>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-        <%= form_tag "/posts" do %>
+        <%= form_tag "posts/search" do %>
         <%= text_field_tag :search_string %>
         <%= submit_tag :search %>
         

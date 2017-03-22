@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :find]
 
   
   # GET /posts
@@ -88,9 +88,8 @@ class PostsController < ApplicationController
     redirect_to :back
   end
 
-  def find
-    @search = params[:search_string]
-    @post = Post.where(:title, @search)
+  def search
+    @posts = Post.where(title: params[:search_string])
     render 'index'
   end
 
