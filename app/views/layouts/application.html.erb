@@ -16,12 +16,12 @@
                 <ul class="nav navbar-nav navbar-right">
                  <p class="notice"><%= notice %></p>
                   <p class="alert"><%= alert %></p>
-                 <%= form_tag "/posts" do %>
+                 <%= form_tag "/posts/search" do %>
                  <%= text_field_tag :search_string %>
                  <%= submit_tag :search %>
+                         <% end %>
               </ul>
              
-        <% end %>
        <% if user_signed_in? %>
           <%= current_user.name %>
            <ul class="nav navbar-nav navbar-right">

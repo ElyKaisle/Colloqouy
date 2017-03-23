@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #post '/profile' => 'users#index'
   post '/posts/search' => 'posts#search'
   resources :comments do
     member do
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  #post '/users/profile' => 'devise#show'
   resources :posts do
       	member do
   		put "like" => 'posts#upvote'
