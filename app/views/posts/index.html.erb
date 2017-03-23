@@ -1,5 +1,7 @@
 <% @posts.each do |post| %>
-      <%= link_to post.title, post %><br>
+  <div class="link row clearfix">
+
+    <h2> <%= link_to post.title, post %></h2><br>
       Submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.name %>
 
       <br>
@@ -12,5 +14,6 @@
         <%= post.get_downvotes.size %>
         <br>
       <% end %>
+  </div>
 <% end %>
 
