@@ -11,7 +11,7 @@
      <header class="navbar navbar-default" role="navigation">
         <div class="navbar-inner">
           <div class="container">
-            <div id="logo" class="navbar-brand"><%= link_to "Colloqouy", root_path %></div>
+            <div id="logo" class="navbar-brand"><%= link_to "Colloqouy", root_path %> <p>"Network for Intelligent and Fair Discussion"</p></div>
              <nav class="collapse navbar-collapse navbar-ex1-collapse"> 
                 <ul class="nav navbar-nav navbar-right">
                  <p class="notice"><%= notice %></p>
@@ -23,11 +23,11 @@
               </ul>
              
        <% if user_signed_in? %>
-          <%= current_user.name %>
            <ul class="nav navbar-nav navbar-right">
              <li><%= link_to 'New Posts', new_post_path %></li>
              <li><%= link_to 'My Account', edit_user_registration_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+                <div>Hi! <%= current_user.name %></div>
            </ul>
         <% else %>
           <ul class="nav navbar-nav pull-right">
@@ -40,10 +40,6 @@
     </div>
     </header>
      <div id="main_content" class="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag(:div,msg, class: "alert alert-#{name}") %>
-        <% end %>
-
         <div id="content" class="col-md-9 center-block">
 
     <%= yield %>

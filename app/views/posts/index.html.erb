@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <div class="link row clearfix">
+  <div >
 
     <h2> <%= link_to post.title, post %></h2><br>
       Submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.name %>
