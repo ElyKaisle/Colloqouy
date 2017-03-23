@@ -24,6 +24,9 @@ body{
 	background: #ADD8E6;
 }
 
+p{
+	font-size: 15px;
+}
 
 #logo {
 	font-size: 26px;
@@ -43,10 +46,11 @@ body{
 		float: none;
 		font-size: 12px;
 		font-color: #fff;
+		padding: 25px;
 	}
 	padding-bottom: 100px;
 	.link{
-		padding: 25px;
+		padding: 30px;
 		border-bottom: 1cm solid #f2f2fe;
 		background: #ADD8E6;
 		.title{

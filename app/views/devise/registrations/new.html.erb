@@ -4,17 +4,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :age, required: true, autofocus: true %>
-    <%= f.input :department, required: true, autofocus: true %>
-    <%= f.input :college, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <p><%= f.input :name, required: true, autofocus: true %></p>
+    <p><%= f.input :email, required: true, autofocus: true %></p>
+    <p><%= f.input :age, required: true, autofocus: true %></p>
+    <p><%= f.input :department, required: true, autofocus: true %></p>
+    <p><%= f.input :college, required: true, autofocus: true %></p>
+    <p><%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %></p>
+    <p><%= f.input :password_confirmation, required: true %></p>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-group">
+    <%= f.submit "Sign up", class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
 

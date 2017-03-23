@@ -11,8 +11,8 @@
       <%= link_to dislike_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
         Downvote
         <%= @post.get_downvotes.size %>
+        <% end %>
         <br>
-      <% end %>
   <h2><%= @post.comments.count %> Comments</h2>
     <%= render @post.comments %>
     <h3>Reply to Thread</h3>
