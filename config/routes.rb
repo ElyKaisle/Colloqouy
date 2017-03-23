@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/posts/search' => 'posts#search'
   resources :comments do
     member do
       put "like" => 'comments#upvote'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  #post '/users/profile' => 'devise#show'
   resources :posts do
       	member do
   		put "like" => 'posts#upvote'
@@ -16,7 +18,6 @@ Rails.application.routes.draw do
       put "unlike" => 'posts#upunvote'
       put "undislike" => 'posts#updownvote'
   	end
-      post '/posts' => 'posts#find'
       resources :comments
   end 
 

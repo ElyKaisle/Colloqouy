@@ -2,16 +2,16 @@
 <html>
   <head>
     <title>COLLOQOUY</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <%= csrf_meta_tags %>
   </head>
 
   <body>
-      <header class="navbar navbar-default" role= "navigation"> 
+     <header class="navbar navbar-default" role="navigation">
         <div class="navbar-inner">
           <div class="container">
-            <div id="logo" class="navbar-brand"><%= link_to "COLLOQOUY", root_path %></div>
+            <div id="logo" class="navbar-brand"><%= link_to "Colloqouy", root_path %></div>
              <nav class="collapse navbar-collapse navbar-ex1-collapse"> 
                 <ul class="nav navbar-nav navbar-right">
                  <p class="notice"><%= notice %></p>
@@ -22,32 +22,30 @@
               </ul>
              
         <% end %>
-       <% if user_signed_in? -%>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><%= link_to 'New Posts', new_post_path %></li>
-                 <li><%= link_to 'My Account', edit_user_registration_path %></li>
-                  <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-              </ul>
-        <% else -%>
+       <% if user_signed_in? %>
+          <%= current_user.name %>
+           <ul class="nav navbar-nav navbar-right">
+             <li><%= link_to 'New Posts', new_post_path %></li>
+             <li><%= link_to 'My Account', edit_user_registration_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+           </ul>
+        <% else %>
           <ul class="nav navbar-nav pull-right">
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
           </ul>
-         <% end -%>
+         <% end %>
       </nav>
     </div>
-    </div> 
+    </div>
     </header>
-
-    <div id="main_content" class="container">
+     <div id="main_content" class="container">
       <% flash.each do |name, msg| %>
         <%= content_tag(:div,msg, class: "alert alert-#{name}") %>
         <% end %>
 
         <div id="content" class="col-md-9 center-block">
+
     <%= yield %>
-    </div>
-  <div>
-  
   </body>
 </html>
